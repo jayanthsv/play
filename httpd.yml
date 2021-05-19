@@ -1,0 +1,20 @@
+---
+- hosts: mynodes
+  become: yes
+
+
+  tasks:
+    - name: Installing Apache, MYSQL DB Community edition & PHP
+      yum:
+        name:
+          - httpd
+          - mysql-community-server
+          - mysql-community-client
+          - php
+        state: installed
+
+    - name: Enabling httpd service and start the service
+      service:
+        name: httpd
+        enabled: yes
+        state: started
