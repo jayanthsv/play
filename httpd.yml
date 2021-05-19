@@ -8,8 +8,6 @@
       yum:
         name:
           - httpd
-          - mysql-community-server
-          - mysql-community-client
           - php
         state: installed
 
